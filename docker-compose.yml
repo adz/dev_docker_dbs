@@ -1,0 +1,18 @@
+qt_multi_tenant:
+  image: mysql:5.6
+  container_name: qt_multi_tenant
+  volumes:
+    - ./qt_multi_tenant:/var/lib/mysql
+    - ./conf.d:/etc/mysql/conf.d
+  ports:
+    - 33306:3306
+captain_cook_cms:
+  image: mysql:5.6
+  container_name: captain_cook_cms
+  volumes:
+    - ./captain_cook_cms:/var/lib/mysql
+    - ./conf.d:/etc/mysql/conf.d
+  environment:
+    MYSQL_ROOT_PASSWORD: msandbox
+  ports:
+    - 33307:3306

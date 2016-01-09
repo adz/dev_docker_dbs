@@ -1,0 +1,8 @@
+#!/bin/bash
+docker-compose up -d $1
+echo "Let's wait a bit..."
+sleep 10
+echo "Hopefully that's enough. Grant time:"
+./grant_docker $1
+echo "OK, lets see how it's doing:"
+docker-compose logs $1

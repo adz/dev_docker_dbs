@@ -1,0 +1,5 @@
+#!/bin/bash
+# Grant user 'docker' with password 'docker' everything
+
+docker exec -it $1 mysql -uroot -pmsandbox \
+  -e "grant all on *.* to 'msandbox'@'%' identified by 'msandbox';"
